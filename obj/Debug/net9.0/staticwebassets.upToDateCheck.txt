@@ -1,0 +1,2 @@
+wwwroot\Plantillas\ReporteGerencialProduccion.xlt
+wwwroot\Plantillas\Ti_ParteDiarioProd_Gerencial_Costos.xltm

@@ -1,0 +1,50 @@
+[
+  {
+    "ContainingType": "TextilesJocApi.Controllers.SqlController",
+    "Method": "GenerateExcelReport",
+    "RelativePath": "api/Sql/generate-excel-report",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "req",
+        "Type": "TextilesJocApi.Controllers.ProcedureRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TextilesJocApi.Controllers.SqlController",
+    "Method": "ExecuteProcedureGrid",
+    "RelativePath": "api/Sql/procedure/grid",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "req",
+        "Type": "TextilesJocApi.Controllers.ProcedureRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TextilesJocApi.Controllers.SqlController",
+    "Method": "ExecuteProcedureSingle",
+    "RelativePath": "api/Sql/procedure/single",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "req",
+        "Type": "TextilesJocApi.Controllers.ProcedureRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
