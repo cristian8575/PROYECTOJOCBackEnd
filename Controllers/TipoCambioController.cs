@@ -84,7 +84,7 @@ namespace TEXTILJOC_ConcarWeb.Controllers
                         {
                             result.Add(new TipoCambioDto
                             {
-                                Dia = reader["Dia"]?.ToString() ?? "",
+                                Dia = $"{reader["Dia"]?.ToString()?.PadLeft(2, '0')}/{mes}/{anio}",
                                 TipoCambioCompra = Convert.ToDecimal(reader["TipoCambioCompra"] ?? 0),
                                 TipoCambioVenta = Convert.ToDecimal(reader["TipoCambioVenta"] ?? 0),
                                 FecCreacion = reader["FecCreacion"]?.ToString() ?? ""
