@@ -32,7 +32,7 @@
               "RelativeDocumentMoniker": "Controllers\\SqlController.cs",
               "ToolTip": "C:\\Users\\Dpto_Sistemas01\\Downloads\\TEXTILESJOCWEB\\TextilesJocApi\\Controllers\\SqlController.cs",
               "RelativeToolTip": "Controllers\\SqlController.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA0AAAAlAAAAAAAAAA==",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAABgAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-19T17:55:35.328Z",
               "EditorCaption": ""
@@ -47,8 +47,7 @@
               "RelativeToolTip": "Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-19T18:36:58.951Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-19T18:36:58.951Z"
             },
             {
               "$type": "Document",
@@ -60,8 +59,7 @@
               "RelativeToolTip": "appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-08-19T17:54:04.774Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-19T17:54:04.774Z"
             }
           ]
         }

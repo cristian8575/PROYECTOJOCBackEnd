@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Dpto_Sistemas01\\Downloads\\TEXTILESJOCWEB\\TextilesJocApi\\TextilesJocApi.csproj": {}
+    "C:\\Users\\USER-TJ01\\Pictures\\TextilesJocApi\\TextilesJocApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Dpto_Sistemas01\\Downloads\\TEXTILESJOCWEB\\TextilesJocApi\\TextilesJocApi.csproj": {
+    "C:\\Users\\USER-TJ01\\Pictures\\TextilesJocApi\\TextilesJocApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Dpto_Sistemas01\\Downloads\\TEXTILESJOCWEB\\TextilesJocApi\\TextilesJocApi.csproj",
+        "projectUniqueName": "C:\\Users\\USER-TJ01\\Pictures\\TextilesJocApi\\TextilesJocApi.csproj",
         "projectName": "TextilesJocApi",
-        "projectPath": "C:\\Users\\Dpto_Sistemas01\\Downloads\\TEXTILESJOCWEB\\TextilesJocApi\\TextilesJocApi.csproj",
-        "packagesPath": "C:\\Users\\Dpto_Sistemas01\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Dpto_Sistemas01\\Downloads\\TEXTILESJOCWEB\\TextilesJocApi\\obj\\",
+        "projectPath": "C:\\Users\\USER-TJ01\\Pictures\\TextilesJocApi\\TextilesJocApi.csproj",
+        "packagesPath": "C:\\Users\\USER-TJ01\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\USER-TJ01\\Pictures\\TextilesJocApi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Dpto_Sistemas01\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\USER-TJ01\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -66,9 +66,13 @@
               "target": "Package",
               "version": "[6.1.1, )"
             },
-            "Microsoft.Office.Excel": {
+            "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[14.0.4760.1000, )"
+              "version": "[9.*, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[9.*, )"
             }
           },
           "imports": [
@@ -90,7 +94,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.308/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

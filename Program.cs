@@ -1,40 +1,17 @@
-//var builder = WebApplication.CreateBuilder(args);
+using Microsoft.EntityFrameworkCore;
+using TEXTILJOC_ConcarWeb.Data;
 
-
-
-//builder.Services.AddCors(options =>
-//{
-//    options.AddPolicy("AllowAll", policy =>
-//    {
-//        policy.AllowAnyOrigin()
-//              .AllowAnyHeader()
-//              .AllowAnyMethod();
-
-//    });
-//});
-
-//// Add services to the container.
-//builder.Services.AddControllers();    // <- necesario
-//builder.Services.AddOpenApi();
-
-//var app = builder.Build();
-
-//if (app.Environment.IsDevelopment())
-//{
-//    app.MapOpenApi();
-//}
-
-//app.UseHttpsRedirection();
-
-//app.UseCors("AllowAll");
-
-//app.UseAuthorization();              // <- opcional pero típico
-
-//app.MapControllers();                // <- necesario
-
-//app.Run();
 var builder = WebApplication.CreateBuilder(args);
+
+// Add services to the container.
+
+// Registro del DbContext para SQL Server
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("Default")));
+
 builder.Services.AddControllers();
+
+// ConfiguraciÃ³n de CORS
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAll", builder =>
@@ -46,8 +23,15 @@ builder.Services.AddCors(options =>
 });
 
 var app = builder.Build();
+
+// Configure the HTTP request pipeline.
+
 app.UseHttpsRedirection();
-app.UseCors("AllowAll"); // La ubicación de esta línea es crítica
+
+app.UseCors("AllowAll"); // La ubicaciÃ³n de esta lÃ­nea es crÃ­tica
+
 app.UseAuthorization();
+
 app.MapControllers();
+
 app.Run();

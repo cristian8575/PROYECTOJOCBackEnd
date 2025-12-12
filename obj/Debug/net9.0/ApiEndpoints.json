@@ -1,6 +1,38 @@
 [
   {
     "ContainingType": "TextilesJocApi.Controllers.SqlController",
+    "Method": "GenerateExcelFormatoPlanContable",
+    "RelativePath": "api/Sql/generate-excel-formato-plancontable",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "req",
+        "Type": "TextilesJocApi.Controllers.ProcedureRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TextilesJocApi.Controllers.SqlController",
+    "Method": "GenerateExcelFormatoPlanContablev2",
+    "RelativePath": "api/Sql/generate-excel-formato-plancontable_v2",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "req",
+        "Type": "TextilesJocApi.Controllers.ProcedureRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TextilesJocApi.Controllers.SqlController",
     "Method": "GenerateExcelReport",
     "RelativePath": "api/Sql/generate-excel-report",
     "HttpMethod": "POST",
@@ -45,6 +77,74 @@
         "IsRequired": true
       }
     ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TextilesJocApi.Controllers.TipoCambioController",
+    "Method": "Guardar",
+    "RelativePath": "api/TipoCambio/insert",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "System.Object",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TextilesJocApi.Controllers.TipoCambioController",
+    "Method": "GuardarMasivo",
+    "RelativePath": "api/TipoCambio/insert-masivo",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "System.Object",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TextilesJocApi.Controllers.TipoCambioController",
+    "Method": "Listar",
+    "RelativePath": "api/TipoCambio/list",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "moneda",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "anio",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "mes",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TextilesJocApi.Controllers.TipoCambioController",
+    "Method": "GetMonedas",
+    "RelativePath": "api/TipoCambio/monedas",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
     "ReturnTypes": []
   }
 ]
