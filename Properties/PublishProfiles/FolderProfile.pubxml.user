@@ -3,7 +3,7 @@
 <Project>
   <PropertyGroup>
     <_PublishTargetUrl>\\192.168.1.10\nueva_carpeta_compartida\Otros\apin</_PublishTargetUrl>
-    <History>True|2025-08-29T21:14:21.0039468Z||;True|2025-08-29T15:37:02.6962736-05:00||;</History>
+    <History>True|2025-09-30T15:22:39.9257150Z||;True|2025-08-29T16:14:21.0039468-05:00||;True|2025-08-29T15:37:02.6962736-05:00||;</History>
     <LastFailureDetails />
   </PropertyGroup>
 </Project>
