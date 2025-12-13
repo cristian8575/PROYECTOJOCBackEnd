@@ -19,11 +19,8 @@ namespace TEXTILJOC_ConcarWeb.Controllers
         private readonly HttpClient _httpClient;
 
         // BCRP Series
-        // USD Interbancario
         private const string SeriesUsdCompra = "PD04639PD";
         private const string SeriesUsdVenta = "PD04640PD";
-
-        // EUR Bancario (Promedio) - Best guess for standard accounting use
         private const string SeriesEurCompra = "PD04647PD";
         private const string SeriesEurVenta = "PD04648PD";
 
@@ -38,10 +35,11 @@ namespace TEXTILJOC_ConcarWeb.Controllers
         {
             try
             {
-                // Validate and Trim inputs
                 req.Moneda = req.Moneda?.Trim();
                 req.Anio = req.Anio?.Trim();
                 req.Mes = req.Mes?.Trim();
+
+                Console.WriteLine($"[START] Reporte for {req.Moneda} {req.Anio}-{req.Mes}");
 
                 var dt = new DataTable();
                 dt.Columns.Add("Dia", typeof(string));
@@ -76,28 +74,25 @@ namespace TEXTILJOC_ConcarWeb.Controllers
                 // 2. Fallbacks if empty
                 if (dt.Rows.Count == 0)
                 {
-                    if (req.Moneda == "MN" || req.Moneda == "PEN")
+                    // Always try BCRP. Map MN/PEN to USD Series.
+                    Console.WriteLine($"[INFO] Trying BCRP for {req.Moneda}...");
+                    var dtBcrp = await FetchFromBcrp(req.Moneda, req.Anio, req.Mes);
+
+                    if (dtBcrp.Rows.Count > 0)
                     {
-                        // Generate dummy data for Soles (1.000)
-                        GenerateSolesData(dt, req.Anio, req.Mes);
-                        sourcedFromBcrp = false; // Not BCRP, just generated
+                        foreach (DataRow r in dtBcrp.Rows)
+                        {
+                            var newRow = dt.NewRow();
+                            newRow["Dia"] = r["Dia"];
+                            newRow["TipoCambioCompra"] = r["TipoCambioCompra"];
+                            newRow["TipoCambioVenta"] = r["TipoCambioVenta"];
+                            dt.Rows.Add(newRow);
+                        }
+                        sourcedFromBcrp = true;
                     }
                     else
                     {
-                        // Try BCRP for USD or EUR
-                        var dtBcrp = await FetchFromBcrp(req.Moneda, req.Anio, req.Mes);
-                        if (dtBcrp.Rows.Count > 0)
-                        {
-                            foreach (DataRow r in dtBcrp.Rows)
-                            {
-                                var newRow = dt.NewRow();
-                                newRow["Dia"] = r["Dia"];
-                                newRow["TipoCambioCompra"] = r["TipoCambioCompra"];
-                                newRow["TipoCambioVenta"] = r["TipoCambioVenta"];
-                                dt.Rows.Add(newRow);
-                            }
-                            sourcedFromBcrp = true;
-                        }
+                        Console.WriteLine("[BCRP] No records found.");
                     }
                 }
 
@@ -188,26 +183,6 @@ namespace TEXTILJOC_ConcarWeb.Controllers
             }
         }
 
-        private void GenerateSolesData(DataTable dt, string? anio, string? mes)
-        {
-            if (string.IsNullOrEmpty(anio) || string.IsNullOrEmpty(mes)) return;
-            try
-            {
-                int y = int.Parse(anio);
-                int m = int.Parse(mes);
-                int days = DateTime.DaysInMonth(y, m);
-                for (int i = 1; i <= days; i++)
-                {
-                    var row = dt.NewRow();
-                    row["Dia"] = i.ToString("00");
-                    row["TipoCambioCompra"] = 1.000m;
-                    row["TipoCambioVenta"] = 1.000m;
-                    dt.Rows.Add(row);
-                }
-            }
-            catch { }
-        }
-
         private async Task<DataTable> FetchFromBcrp(string moneda, string? anio, string? mes)
         {
             var dt = new DataTable();
@@ -218,20 +193,40 @@ namespace TEXTILJOC_ConcarWeb.Controllers
             if (string.IsNullOrEmpty(anio) || string.IsNullOrEmpty(mes)) return dt;
 
             string sCompra = "", sVenta = "";
-            if (moneda == "USD") { sCompra = SeriesUsdCompra; sVenta = SeriesUsdVenta; }
+
+            if (moneda == "USD" || moneda == "US" || moneda == "MN" || moneda == "PEN")
+            {
+                sCompra = SeriesUsdCompra;
+                sVenta = SeriesUsdVenta;
+            }
             else if (moneda == "EUR") { sCompra = SeriesEurCompra; sVenta = SeriesEurVenta; }
-            else return dt; // No series for other currencies
+            else return dt;
 
             int y = int.Parse(anio);
             int m = int.Parse(mes);
-            var startDate = new DateTime(y, m, 1).ToString("yyyy-M-d");
-            var endDate = new DateTime(y, m, DateTime.DaysInMonth(y, m)).ToString("yyyy-M-d");
+
+            var startDate = new DateTime(y, m, 1).ToString("yyyy-MM-dd");
+            var endDate = new DateTime(y, m, DateTime.DaysInMonth(y, m)).ToString("yyyy-MM-dd");
 
             string url = $"https://estadisticas.bcrp.gob.pe/estadisticas/series/api/{sCompra}-{sVenta}/json/{startDate}/{endDate}";
+            Console.WriteLine($"[BCRP] Fetching URL: {url}");
 
             try
             {
+                // Add User-Agent to prevent 403/Blocking
+                if (!_httpClient.DefaultRequestHeaders.Contains("User-Agent"))
+                {
+                    _httpClient.DefaultRequestHeaders.Add("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64)");
+                }
+
                 var response = await _httpClient.GetStringAsync(url);
+
+                if (string.IsNullOrWhiteSpace(response) || response.TrimStart().StartsWith("<"))
+                {
+                    Console.WriteLine("[BCRP] ERROR: Received HTML instead of JSON. (Likely invalid date or no series data).");
+                    return dt;
+                }
+
                 using (var doc = JsonDocument.Parse(response))
                 {
                     var periods = doc.RootElement.GetProperty("periods");
@@ -246,10 +241,20 @@ namespace TEXTILJOC_ConcarWeb.Controllers
                             var row = dt.NewRow();
                             row["Dia"] = day;
 
-                            if (decimal.TryParse(values[0].GetString(), out decimal c)) row["TipoCambioCompra"] = c;
-                            if (decimal.TryParse(values[1].GetString(), out decimal v)) row["TipoCambioVenta"] = v;
+                            string v0 = values[0].GetString() ?? "";
+                            string v1 = values[1].GetString() ?? "";
 
-                            dt.Rows.Add(row);
+                            if (decimal.TryParse(v0, NumberStyles.Any, CultureInfo.InvariantCulture, out decimal c) &&
+                                decimal.TryParse(v1, NumberStyles.Any, CultureInfo.InvariantCulture, out decimal v))
+                            {
+                                row["TipoCambioCompra"] = c;
+                                row["TipoCambioVenta"] = v;
+                                dt.Rows.Add(row);
+                            }
+                            else
+                            {
+                                Console.WriteLine($"[BCRP] Parse Fail: {v0} / {v1}");
+                            }
                         }
                     }
                 }
