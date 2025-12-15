@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TextilesJocApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2e5b98229bf5a0a8f087ad3fc45db250f0729cea")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9d741ba5579c23c4b1db9cd80f9810d829125cff")]
 [assembly: System.Reflection.AssemblyProductAttribute("TextilesJocApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TextilesJocApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

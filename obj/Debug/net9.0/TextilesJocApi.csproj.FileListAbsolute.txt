@@ -179,3 +179,10 @@ C:\Users\Dpto_Sistemas01\Desktop\Backend\PROYECTOJOCBackEnd\obj\Debug\net9.0\ref
 C:\Users\Dpto_Sistemas01\Desktop\Backend\PROYECTOJOCBackEnd\obj\Debug\net9.0\TextilesJocApi.pdb
 C:\Users\Dpto_Sistemas01\Desktop\Backend\PROYECTOJOCBackEnd\obj\Debug\net9.0\TextilesJocApi.genruntimeconfig.cache
 C:\Users\Dpto_Sistemas01\Desktop\Backend\PROYECTOJOCBackEnd\obj\Debug\net9.0\ref\TextilesJocApi.dll
+C:\Users\Dpto_Sistemas01\Desktop\Backend\PROYECTOJOCBackEnd\bin\Debug\net9.0\publish\web.config
+C:\Users\Dpto_Sistemas01\Desktop\Backend\PROYECTOJOCBackEnd\bin\Debug\net9.0\publish\appsettings.Development.json
+C:\Users\Dpto_Sistemas01\Desktop\Backend\PROYECTOJOCBackEnd\bin\Debug\net9.0\publish\appsettings.json
+C:\Users\Dpto_Sistemas01\Desktop\Backend\PROYECTOJOCBackEnd\bin\Debug\net9.0\publish\TextilesJocApi.deps.json
+C:\Users\Dpto_Sistemas01\Desktop\Backend\PROYECTOJOCBackEnd\bin\Debug\net9.0\publish\TextilesJocApi.runtimeconfig.json
+C:\Users\Dpto_Sistemas01\Desktop\Backend\PROYECTOJOCBackEnd\bin\Debug\net9.0\publish\TextilesJocApi.staticwebassets.endpoints.json
+C:\Users\Dpto_Sistemas01\Desktop\Backend\PROYECTOJOCBackEnd\bin\Debug\net9.0\publish\wwwroot\locales\es.json
