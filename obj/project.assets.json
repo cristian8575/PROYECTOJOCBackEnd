@@ -4999,11 +4999,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Dpto_Sistemas01\\Desktop\\Backend\\PROYECTOJOCBackEnd\\TextilesJocApi.csproj",
+      "projectUniqueName": "C:\\Users\\Dpto_Sistemas01\\Documents\\BACK_JOC_WEB\\PROYECTOJOCBackEnd\\TextilesJocApi.csproj",
       "projectName": "TextilesJocApi",
-      "projectPath": "C:\\Users\\Dpto_Sistemas01\\Desktop\\Backend\\PROYECTOJOCBackEnd\\TextilesJocApi.csproj",
+      "projectPath": "C:\\Users\\Dpto_Sistemas01\\Documents\\BACK_JOC_WEB\\PROYECTOJOCBackEnd\\TextilesJocApi.csproj",
       "packagesPath": "C:\\Users\\Dpto_Sistemas01\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Dpto_Sistemas01\\Desktop\\Backend\\PROYECTOJOCBackEnd\\obj\\",
+      "outputPath": "C:\\Users\\Dpto_Sistemas01\\Documents\\BACK_JOC_WEB\\PROYECTOJOCBackEnd\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -5108,7 +5108,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.308/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
       }
     }
   },

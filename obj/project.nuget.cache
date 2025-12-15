@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "EcbQI+dEP1w=",
+  "dgSpecHash": "yYxuJEws3tY=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Dpto_Sistemas01\\Desktop\\Backend\\PROYECTOJOCBackEnd\\TextilesJocApi.csproj",
+  "projectFilePath": "C:\\Users\\Dpto_Sistemas01\\Documents\\BACK_JOC_WEB\\PROYECTOJOCBackEnd\\TextilesJocApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Dpto_Sistemas01\\.nuget\\packages\\azure.core\\1.47.1\\azure.core.1.47.1.nupkg.sha512",
     "C:\\Users\\Dpto_Sistemas01\\.nuget\\packages\\azure.identity\\1.14.2\\azure.identity.1.14.2.nupkg.sha512",
@@ -100,9 +100,9 @@
       "code": "NU1701",
       "level": "Warning",
       "message": "El paquete \"Microsoft.Office.Excel 14.0.4760.1000\" se restauró con \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1\" en lugar de la plataforma de destino del proyecto \"net9.0\". Puede que el paquete no sea totalmente compatible con el proyecto.",
-      "projectPath": "C:\\Users\\Dpto_Sistemas01\\Desktop\\Backend\\PROYECTOJOCBackEnd\\TextilesJocApi.csproj",
+      "projectPath": "C:\\Users\\Dpto_Sistemas01\\Documents\\BACK_JOC_WEB\\PROYECTOJOCBackEnd\\TextilesJocApi.csproj",
       "warningLevel": 1,
-      "filePath": "C:\\Users\\Dpto_Sistemas01\\Desktop\\Backend\\PROYECTOJOCBackEnd\\TextilesJocApi.csproj",
+      "filePath": "C:\\Users\\Dpto_Sistemas01\\Documents\\BACK_JOC_WEB\\PROYECTOJOCBackEnd\\TextilesJocApi.csproj",
       "libraryId": "Microsoft.Office.Excel",
       "targetGraphs": [
         "net9.0"
