@@ -61,6 +61,10 @@ var app = builder.Build();
 // 2. PIPELINE HTTP (El orden aquí es CRÍTICO)
 // -------------------------------------------------------------------------
 
+
+app.UseDefaultFiles(); // Habilita buscar index.html
+app.UseStaticFiles();  // Habilita servir archivos JS/CSS
+
 // A. Swagger (Lo ponemos fuera del 'if Development' para que te salga sí o sí ahora)
 app.UseSwagger();
 app.UseSwaggerUI();
