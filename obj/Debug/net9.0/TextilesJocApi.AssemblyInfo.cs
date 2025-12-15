@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TextilesJocApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9d741ba5579c23c4b1db9cd80f9810d829125cff")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ef7de1b633fabc2108ec7384180ff25b97ce4a3e")]
 [assembly: System.Reflection.AssemblyProductAttribute("TextilesJocApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TextilesJocApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

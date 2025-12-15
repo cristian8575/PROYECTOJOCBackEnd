@@ -4,13 +4,11 @@
     "\\Controllers",
     "\\Data",
     "\\Models",
-    "\\obj\\Debug",
-    "\\obj\\Release",
     "\\Properties",
     "\\Properties\\PublishProfiles",
     "\\wwwroot",
     "\\wwwroot\\Plantillas"
   ],
-  "SelectedNode": "\\TextilesJocApi.csproj",
+  "SelectedNode": "\\Controllers\\SqlController.cs",
   "PreviewInSolutionExplorer": false
 }
